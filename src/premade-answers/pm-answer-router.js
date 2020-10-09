@@ -22,25 +22,36 @@ pmAnswersRouter
   });
 
 pmAnswersRouter
-  .route('/:question_id')
-  .all((req, res, next) => {    
+  .route('/question/:question_id')
+  .all((req, res, next) => {
     pmAnswerService.getAnswersByQuestionId(
       req.app.get('db'),
       req.params.question_id
     )
       .then(answers => {
-        if(!answers) {
+        if (!answers) {
           return res.status(404).json({
             error: { message: `Question id not found` }
           });
         }
-        res.answers = answers;        
+        res.answers = answers;
         next();
       })
-      .catch(next);      
+      .catch(next);
   })
   .get((req, res) => {
     res.json(res.answers);
+  });
+
+pmAnswersRouter
+  .route('/correct')
+  .get((req, res, next) => {
+    const knexInstance = req.app.get('db');
+    pmAnswerService.getCorrectAnswers(knexInstance)
+      .then(answers => {
+        res.json(answers.map(serializePreMadeAnswer));
+      })
+      .catch(next);
   });
 
 

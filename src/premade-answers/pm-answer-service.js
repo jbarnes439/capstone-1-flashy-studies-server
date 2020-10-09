@@ -10,6 +10,12 @@ const pmAnswerService = {
       .select('*')
       .where('question_id', id);      
   },
+
+  getCorrectAnswers(knex) {
+    return knex('premade_answers')
+      .select('*')
+      .where('correct', true);
+  },
 };
 
 module.exports = pmAnswerService;
