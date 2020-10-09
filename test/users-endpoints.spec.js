@@ -1,11 +1,11 @@
+/* eslint-disable quotes */
 const knex = require('knex');
 const app = require('../src/app');
-const helpers = require('./test-helpers')
+const { makeUsersArray } = require('./user.fixtures');
 
-describe.only('Users Endpoints', function() {
+describe.skip('Users Endpoints', function() {
   let db;
 
-  // const { testUsers } = helpers.makeFixtures()
   before('make knex instance', () => {
     db = knex({
       client: 'pg',
@@ -16,7 +16,11 @@ describe.only('Users Endpoints', function() {
 
   after('disconnect from db', () => db.destroy());
 
-  // before('cleanup', () => helpers.cleanTables(db));
+  before('cleanup', () => db.raw('TRUNCATE users RESTART IDENTITY CASCADE'));
 
-  // afterEach('cleanup', () => helpers.cleanTables(db));
+  afterEach('cleanup', () => db.raw('TRUNCATE users RESTART IDENTITY CASCADE'));
+
+  describe(`POST /api/users`, () => {
+    
+  })
 })

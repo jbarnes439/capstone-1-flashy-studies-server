@@ -29,7 +29,7 @@ pmAnswersRouter
       req.params.question_id
     )
       .then(answers => {
-        if (!answers) {
+        if (answers.length === 0) {
           return res.status(404).json({
             error: { message: `Question id not found` }
           });
