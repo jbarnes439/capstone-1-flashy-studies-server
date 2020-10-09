@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 const knex = require('knex');
 const app = require('../src/app');
-const { makeUsersArray } = require('./user.fixtures');
+// const { makeUsersArray } = require('./user.fixtures');
 
 describe.skip('Users Endpoints', function() {
   let db;
@@ -22,5 +22,5 @@ describe.skip('Users Endpoints', function() {
 
   describe(`POST /api/users`, () => {
     
-  })
-})
+  });
+});

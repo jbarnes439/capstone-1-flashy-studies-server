@@ -63,7 +63,7 @@ describe(`Premade_Answers service object`, function () {
           .insert(testQuestions);
       });
 
-      it(`responds with 200 and an empty list`, () => {
+      it(`responds with 404 and error message`, () => {
         const questionId = 72;
 
         return supertest(app)
