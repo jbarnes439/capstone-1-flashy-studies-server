@@ -53,7 +53,7 @@ describe(`Premade_Answers service object`, function () {
     });
   });
 
-  describe.only(`GET /api/preMadeAnswers/question/question_id`, () => {
+  describe(`GET /api/preMadeAnswers/question/question_id`, () => {
     context('Given there are no answers in the database', () => {
       const testQuestions = makePmQuestionsArray();
 
@@ -63,7 +63,7 @@ describe(`Premade_Answers service object`, function () {
           .insert(testQuestions);
       });
 
-      it(`responds with 404 and error message`, () => {
+      it(`responds with 404 and error message when the question isn't in the database`, () => {
         const questionId = 72;
 
         return supertest(app)

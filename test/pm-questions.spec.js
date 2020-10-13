@@ -72,7 +72,15 @@ describe(`Premade_questions service object`, function() {
         return supertest(app)
           .get(`/api/preMadeQuestions/${questionId}`)
           .expect(200, expectedQuestion);
-      });      
+      });
+      
+      it('responds with 200 and questions by topic', () => {
+        const questionTopic = 'jokes';
+        const expectedQuestions = makePmQuestionsArray();
+        return supertest(app)
+          .get(`/api/preMadeQuestions/questions/${questionTopic}`)
+          .expect(200, expectedQuestions);
+      });
     });    
   });
 });

@@ -3,10 +3,21 @@ const pmQuestionService = {
   getAllQuestions(db) {
     return db
       .from('premade_questions')
-      .select(
-        'premade_questions.id',
-        'premade_questions.question',        
-      )      
+      .select('*');      
+  },
+
+  getAllTopics(db) {
+    return db
+      .from('premade_questions')
+      .select('topic')
+      .distinctOn('topic');
+  },
+
+  getQuestionsByTopic(db, topic) {    
+    return db
+      .from('premade_questions')
+      .select('*')
+      .where( 'topic', topic );
   },
 
   getById(db, id) {
@@ -21,7 +32,7 @@ const pmQuestionService = {
     return knex('premade_answers')
       .select('*')
       .where('question_id', id);
-  }
+  },
 };
 
 

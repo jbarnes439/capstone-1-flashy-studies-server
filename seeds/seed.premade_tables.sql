@@ -5,18 +5,19 @@ TRUNCATE
   premade_answers
   RESTART IDENTITY CASCADE;
 
-INSERT INTO premade_questions (question)
+INSERT INTO premade_questions (question, topic)
   VALUES
-    ('What is the anatomical name for all of the bones in the head?'),
-    ('What is the name of the first cervical vertebra?'),
-    ('What is the name of the second cervical vertebra?'),
-    ('What is the name of the artery that supplies blood to head?'),
-    ('Which bloodvessels are responsible for supplying blood to the right atrium?'),
-    ('What type of tissue is attached to bones and makes up the joints?'),
-    ('Which body structure allows air to pass into the lungs?'),
-    ('Which bone is proximal to the ulna and distal to the femur?'),
-    ('What disorder is characterized by episodes of falling asleep throughout the day?'),
-    ('Which part of the brain controls body temperature, appetite, and sleep?');
+    ('What is the anatomical name for all of the bones in the head?', 'anatomy'),
+    ('What is the name of the first cervical vertebra?', 'anatomy'),
+    ('What is the name of the second cervical vertebra?', 'anatomy'),
+    ('What is the name of the artery that supplies blood to head?', 'anatomy'),
+    ('Which bloodvessels are responsible for supplying blood to the right atrium?', 'anatomy'),
+    ('What type of tissue is attached to bones and makes up the joints?', 'anatomy'),
+    ('Which body structure allows air to pass into the lungs?', 'anatomy'),
+    ('Which bone is proximal to the ulna and distal to the femur?', 'anatomy'),
+    ('What disorder is characterized by episodes of falling asleep throughout the day?', 'anatomy'),
+    ('Which part of the brain controls body temperature, appetite, and sleep?', 'anatomy'),
+    ('What is the operator used for checking strict equality?', 'coding');
 
 INSERT INTO premade_answers (answer, correct, question_id)
   VALUES
@@ -59,6 +60,10 @@ INSERT INTO premade_answers (answer, correct, question_id)
     ('hypothalmus', true, 10),
     ('cerebellum', false, 10),
     ('cerebrum', false, 10),
-    ('prefrontal cortex', false, 10);
+    ('prefrontal cortex', false, 10),
+    ('=', false, 11),
+    ('==', false, 11),
+    ('===', true, 11),
+    ('!=', false, 11);
 
 COMMIT;

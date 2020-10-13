@@ -2,19 +2,23 @@ function makePmQuestionsArray() {
   return [
     {
       id: 1,
-      question: 'What did the fish say when it ran into a wall?'
+      question: 'What did the fish say when it ran into a wall?',
+      topic: 'jokes',
     },
     {
       id: 2,
       question: 'What do you call a deer with no eyes?',
+      topic: 'jokes',
     },
     {
       id: 3,
       question: 'Who is the coolest doctor in the hospital',
+      topic: 'jokes',
     },
     {
       id: 4,
-      question: 'What do you call slipping on a bra?'
+      question: 'What do you call slipping on a bra?',
+      topic: 'jokes',
     }
   ];
 }
