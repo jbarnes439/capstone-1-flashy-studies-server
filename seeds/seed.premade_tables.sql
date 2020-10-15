@@ -16,9 +16,9 @@ INSERT INTO premade_questions (question, topic)
     ('Which body structure allows air to pass into the lungs?', 'anatomy'),
     ('Which bone is proximal to the ulna and distal to the femur?', 'anatomy'),
     ('What disorder is characterized by episodes of falling asleep throughout the day?', 'anatomy'),
-    ('Which part of the brain controls body temperature, appetite, and sleep?', 'anatomy'),
-    ('What is the operator used for checking strict equality?', 'coding'),
-    ('Which array method will find specific values and create a new array out of them?', 'coding');
+    ('Which part of the brain controls body temperature, appetite, and sleep?', 'anatomy');
+    -- ('What is the operator used for checking strict equality?', 'coding'),
+    -- ('Which array method will find specific values and create a new array out of them?', 'coding');
 
 INSERT INTO premade_answers (answer, correct, question_id)
   VALUES
