@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 const knex = require('knex');
 const app = require('../src/app');
-const { makePmQuestionsArray, makePmAnswersArray } = require('./premade.fixtures')
+const { makePmQuestionsArray, makePmAnswersArray } = require('./premade.fixtures');
 
 
 describe(`Premade_Answers service object`, function () {

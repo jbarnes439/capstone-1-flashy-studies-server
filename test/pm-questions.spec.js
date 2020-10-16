@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 const knex = require('knex');
 const app = require('../src/app');
-const { makePmQuestionsArray } = require('./premade.fixtures')
+const { makePmQuestionsArray } = require('./premade.fixtures');
 
 
 describe(`Premade_questions service object`, function() {
@@ -53,7 +53,7 @@ describe(`Premade_questions service object`, function() {
         const questionId = 69;
         return supertest(app)
           .get(`/api/preMadeQuestions/${questionId}`)
-          .expect(404, { error: { message: `Question id not found` } })
+          .expect(404, { error: { message: `Question id not found` } });
       });
     });
 

@@ -34,7 +34,7 @@ pmQuestionsRouter
       .then(question => {
         if (!question) {
           return res.status(404).json({
-            error: { message: `Question id not found` }
+            error: { message: 'Question id not found' }
           });
         }
         res.question = question;
@@ -56,7 +56,7 @@ pmQuestionsRouter
       .then(questions => {
         if (questions.length === 0) {
           return res.status(404).json({
-            error: { message: `topic not found` }
+            error: { message: 'topic not found' }
           });
         }
         res.questions = questions;
