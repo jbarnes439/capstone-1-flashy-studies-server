@@ -24,12 +24,6 @@ function makeUsersArray() {
   ];
 }
 
-
-
-// Will need to make test user questions and answers
-// to test functionality of user made questions and answers
-
-
 function seedUsers(db, users) {
   const preppedUsers = users.map(user => ({
     ...user,
@@ -43,7 +37,6 @@ function seedUsers(db, users) {
       )
     )
 }
-
 
 module.exports = {
   makeUsersArray,

@@ -32,7 +32,7 @@ usersRouter
           .then(hashedPassword => {
 
             const newUser = {
-              username,
+              username: username,
               password: hashedPassword,
               date_created: 'now()',
             };

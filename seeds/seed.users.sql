@@ -9,11 +9,11 @@ TRUNCATE
 INSERT INTO users (username, password)
 VALUES
 --stickysubject password is 'StickyPassword1'
-  ('stickysubject', '$2a$12$6ce.Ta6lashzEWMAyi0a6.Nw34Ns7hpabcmVG4v67PJXs9I7F0cxC'),
-  -- jmoney password is 'Jm0n3y'
+  ('stickysubject', '$2a$12$6ce.Ta6lashzEWMAyi0a6.Nw34Ns7hpabcmVG4v67PJXs9I7F0cxC'),  
   ('jmoney', '$2a$12$8In2D5xW8L77rCiync1GT.vPdMJkWL8aGWJuSzPPUtgulr4jFGV6G'),
   ('jbarnes439', '$2a$12$enqvtcFrz7/s.IQYTeonC.S/Kj76gjexmsxrddMxzEr8br0N5usfy'),
-  ('testuser', '$2a$12$oKY3CA1AjFA0eMDRJC2r2uKe/dTQS8m8kdAs/oTDx/kgoqyf1dhom');
+  ('testuser', '$2a$12$oKY3CA1AjFA0eMDRJC2r2uKe/dTQS8m8kdAs/oTDx/kgoqyf1dhom'),
+  ('userflashystudies', '$2a$12$Oco18M66a7iZfOMZvTXgCukBulsIxbwU15Wim8AkNrD2TB3cJtg5G');
 
 INSERT INTO user_questions (question, user_id)
 VALUES

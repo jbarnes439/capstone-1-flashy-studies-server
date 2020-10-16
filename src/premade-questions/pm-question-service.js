@@ -29,7 +29,8 @@ const pmQuestionService = {
   },
 
   getAnswersByQuestionId(db, id) {
-    return knex('premade_answers')
+    return db
+      .from('premade_answers')
       .select('*')
       .where('question_id', id);
   },
