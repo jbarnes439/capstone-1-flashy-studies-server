@@ -1,0 +1,2 @@
+ALTER TABLE user_answers
+  ADD COLUMN correct BOOLEAN NOT NULL DEFAULT true;
