@@ -1,3 +1,5 @@
+// answer table database query servicess
+
 const pmAnswerService = {
 
   getAllAnswers(knex) {

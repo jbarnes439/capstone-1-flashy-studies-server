@@ -1,3 +1,5 @@
+// questions table database query services
+
 const pmQuestionService = {
 
   getAllQuestions(db) {
@@ -35,8 +37,6 @@ const pmQuestionService = {
       .where('question_id', id);
   },
 };
-
-
 
 module.exports = pmQuestionService;
 

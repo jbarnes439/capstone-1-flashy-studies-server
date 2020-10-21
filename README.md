@@ -67,7 +67,7 @@ Run the tests `npm test`
     // res.body
     {
       id: Integer,
-      uestion: String
+      question: String
     }
 
 

@@ -43,6 +43,7 @@ pmAnswersRouter
     res.json(res.answers);
   });
 
+// get only correct answers
 pmAnswersRouter
   .route('/correct')
   .get((req, res, next) => {

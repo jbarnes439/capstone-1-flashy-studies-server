@@ -8,13 +8,15 @@ authRouter
   .post('/login', jsonBodyParser, (req, res, next) => {
     const { username, password } = req.body;
     const loginUser = { username, password };
-
+    
+    // validate that values for name and password were passed in.
     for (const [key, value] of Object.entries(loginUser))
       if (value == null)
         return res.status(400).json({
           error: `Missing '${key}' in request body`
         });
-
+    
+    // query database for user
     AuthService.getUserWithUserName(
       req.app.get('db'),
       loginUser.username
@@ -32,6 +34,7 @@ authRouter
                 error: 'Incorrect username or password',
               });
 
+            // return jwt credentials
             const sub = dbUser.username;
             const payload = { user_id: dbUser.id };
             res.send({

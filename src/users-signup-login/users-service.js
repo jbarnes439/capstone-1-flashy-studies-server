@@ -4,6 +4,8 @@ const bcrypt = require('bcryptjs');
 const REGEX_UPPER_LOWER_NUMBER_SPECIAL = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&])[\S]+/;
 
 const UsersService = {
+
+  // Check if username in the database
   hasUserWithUserName(db, username) {
     return db('users')
       .where({ username })
@@ -11,6 +13,7 @@ const UsersService = {
       .then(user => !!user);
   },
 
+  // create a new user
   insertUser(db, newUser) {
     return db
       .insert(newUser)
@@ -19,6 +22,7 @@ const UsersService = {
       .then(([user]) => user);
   },
 
+  // validate new user password
   validatePassword(password) {
     if (password.length < 8) {
       return 'Password must be longer than 8 characters';
@@ -35,10 +39,11 @@ const UsersService = {
     return null;
   },
 
+  // password encryption for new user
   hashPassword(password) {
     return bcrypt.hash(password, 12);
   },
-
+   
   serializeUser(user) {
     return {
       id: user.id,

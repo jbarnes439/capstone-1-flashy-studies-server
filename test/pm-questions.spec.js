@@ -15,6 +15,7 @@ describe(`Premade_questions service object`, function() {
     app.set('db', db);
   });
 
+  // prepare databases for each test.
   after('disconnect from db', () => db.destroy());
 
   before('clean the table', () => db.raw('TRUNCATE premade_questions, premade_answers RESTART IDENTITY CASCADE'));

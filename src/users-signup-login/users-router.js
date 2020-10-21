@@ -5,6 +5,7 @@ const UsersService = require('./users-service');
 const usersRouter = express.Router();
 const jsonBodyParser = express.json();
 
+// login handling
 usersRouter
   .post('/', jsonBodyParser, (req, res, next) => {
     const { password, username } = req.body;

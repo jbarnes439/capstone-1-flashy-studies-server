@@ -46,6 +46,7 @@ pmQuestionsRouter
     res.json(serializePreMadeQuestion(res.question));
   });
 
+// router for filtering questions by topic
 pmQuestionsRouter
   .route('/questions/:topic')
   .all((req, res, next) => {
