@@ -26,56 +26,35 @@ function makeUsersArray() {
   ];
 }
 
-function makeUserQuestionsArray(users) {
+function makeUserFlashcardArray(users) {
   return [
     {
       id: 1,
       question: 'What did the fish say when it ran into a wall?',
+      answer: 'dam',
       date_created: '2020-10-16 05:00:00',
       user_id: users[0].id,
     },
     {
       id: 2,
       question: 'Who is the coolest doctor in the hospital?',
+      answer: 'The hip doctor',
       date_created: '2020-10-16 05:00:00',
       user_id: users[1].id,
     },
     {
       id: 3,
       question: 'What do you call a deer with no eyes?',
+      answer: 'no eye deer',
       date_created: '2020-10-16 12:20:05',
       user_id: users[2].id,
     },
     {
       id: 4,
       questions: 'What is brown and sticky?',
+      answer: 'a stick',
       date_created: '2020-10-16 12:22:30',
       user_id: users[0].id,
-    },
-  ]
-}
-
-function makeUserAnswersArray(questions) {
-  return [
-    {
-      id: 1,
-      answer: 'dam',      
-      question_id: questions[0].id
-    },
-    {
-      id: 2,
-      answer: 'The hip doctor!',      
-      question_id: questions[1].id,
-    },
-    {
-      id: 3,
-      answer: 'No eye deer!',      
-      question_id: questions[2].id,
-    },
-    {
-      id: 4,
-      answer: 'A stick!',
-      question_id: questions[3].id,
     },
   ]
 }

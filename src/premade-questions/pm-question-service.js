@@ -15,13 +15,6 @@ const pmQuestionService = {
       .distinctOn('topic');
   },
 
-  getQuestionsByTopic(db, topic) {    
-    return db
-      .from('premade_questions')
-      .select('*')
-      .where( 'topic', topic );
-  },
-
   getById(db, id) {
     return db
       .from('premade_questions')

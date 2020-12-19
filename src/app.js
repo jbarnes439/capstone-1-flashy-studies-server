@@ -9,6 +9,8 @@ const preMadeAnswersRouter = require('./premade-answers/pm-answer-router');
 const authRouter = require('../src/auth/auth-router');
 const usersRouter = require('./users-signup-login/users-router');
 const userInfoRouter = require('./user-info/user-info-router');
+const userFlashcardRouter = require('./user-flashcards/user-flashcards-router');
+const userFlashcardService = require('./user-flashcards/user-flashcards-service');
 
 const app = express();
 
@@ -20,9 +22,10 @@ app.use(morgan(morganOption));
 app.use(helmet());
 app.use(cors());
 
+app.use('/api/auth', authRouter);
 app.use('/api/preMadeQuestions', preMadeQuestionsRouter);
 app.use('/api/preMadeAnswers', preMadeAnswersRouter);
-app.use('/api/auth', authRouter);
+app.use('/api/user-flashcards', userFlashcardRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/user', userInfoRouter);
 
